@@ -1,7 +1,8 @@
-module "example" {
-  source = "../.."
-
-  example = coalesce(var.example_input_override, var.example_input)
-
+module "zone-route53" {
+  source  = "../../"
   context = module.this.context
+
+  zone_name = var.zone_name
+
+  records = var.records
 }

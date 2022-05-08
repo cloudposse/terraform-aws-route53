@@ -1,14 +1,14 @@
-output "id" {
-  description = "ID of the created example"
-  value       = module.this.enabled ? module.this.id : null
+output "zone_id" {
+  description = "ID of created zone"
+  value       = aws_route53_zone.default.zone_id
 }
 
-output "example" {
-  description = "Example output"
-  value       = module.this.enabled ? local.example : null
+output "zone_name" {
+  description = "Name of created zone"
+  value       = aws_route53_zone.default.name
 }
 
-output "random" {
-  description = "Stable random number for this example"
-  value       = module.this.enabled ? join("", random_integer.example[*].result) : null
+output "record" {
+  description = "FQDNs of created records"
+  value       = { for k, v in aws_route53_record.default : k => v.fqdn }
 }

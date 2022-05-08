@@ -1,14 +1,7 @@
-output "id" {
-  description = "ID of the created example"
-  value       = module.example.id
+output "zone_id" {
+  value = module.zone-route53.zone_id
 }
 
-output "example" {
-  description = "Output \"example\" from example module"
-  value       = module.example.example
-}
-
-output "random" {
-  description = "Output \"random\" from example module"
-  value       = module.example.random
+output "zone_name" {
+  value = module.zone-route53.zone_name
 }
