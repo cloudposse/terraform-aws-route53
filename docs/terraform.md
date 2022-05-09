@@ -3,7 +3,7 @@
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.0 |
 
 ## Providers
@@ -57,6 +57,7 @@
 
 | Name | Description |
 |------|-------------|
+| <a name="output_name_servers"></a> [name\_servers](#output\_name\_servers) | A list of name servers in associated (or default) delegation set |
 | <a name="output_record"></a> [record](#output\_record) | FQDNs of created records |
 | <a name="output_zone_id"></a> [zone\_id](#output\_zone\_id) | ID of created zone |
 | <a name="output_zone_name"></a> [zone\_name](#output\_zone\_name) | Name of created zone |

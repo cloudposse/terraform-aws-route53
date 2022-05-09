@@ -1,4 +1,6 @@
 locals {
+  enabled = module.this.enabled
+
   records = try(jsondecode(var.records), var.records)
   record_objects = {
     for i, r in local.records :
@@ -32,6 +34,8 @@ locals {
 }
 
 resource "aws_route53_zone" "default" {
+  count = local.enabled ? 1 : 0
+  
   name          = var.zone_name
   comment       = module.this.name
   force_destroy = var.force_destroy
@@ -42,7 +46,7 @@ resource "aws_route53_zone" "default" {
 resource "aws_route53_record" "default" {
   for_each = local.record_objects
 
-  zone_id         = aws_route53_zone.default.zone_id
+  zone_id         = aws_route53_zone.default[0].zone_id
   type            = each.value.type
   name            = each.value.name
   allow_overwrite = var.allow_overwrite

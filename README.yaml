@@ -59,7 +59,7 @@ usage: |-
   (which tests and deploys the example on AWS), see [test](test).
 
   ```hcl
-  module "zone-route53" {
+  module "zone_route53" {
     source           = "cloudposse/terraform-route53/aws"
     # Cloud Posse recommends pinning every module to a specific version
     # version = "x.x.x"

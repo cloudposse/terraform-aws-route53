@@ -103,7 +103,7 @@ For automated tests of the complete example using [bats](https://github.com/bats
 (which tests and deploys the example on AWS), see [test](test).
 
 ```hcl
-module "zone-route53" {
+module "zone_route53" {
   source           = "cloudposse/terraform-route53/aws"
   # Cloud Posse recommends pinning every module to a specific version
   # version = "x.x.x"
@@ -157,7 +157,7 @@ Available targets:
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.0 |
 
 ## Providers
@@ -211,6 +211,7 @@ Available targets:
 
 | Name | Description |
 |------|-------------|
+| <a name="output_name_servers"></a> [name\_servers](#output\_name\_servers) | A list of name servers in associated (or default) delegation set |
 | <a name="output_record"></a> [record](#output\_record) | FQDNs of created records |
 | <a name="output_zone_id"></a> [zone\_id](#output\_zone\_id) | ID of created zone |
 | <a name="output_zone_name"></a> [zone\_name](#output\_zone\_name) | Name of created zone |
