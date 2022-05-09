@@ -1,4 +1,4 @@
-module "zone_route53" {
+module "zone" {
   source  = "../../"
   context = module.this.context
 

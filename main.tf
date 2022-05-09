@@ -10,9 +10,9 @@ locals {
       try(lower(r.set_identifier), ""),
       try(lower(r.failover), "")
       ])) => {
-      name = try(lower(r.name), "")
-      type = r.type
-      ttl  = try(r.ttl, null)
+      name    = try(lower(r.name), "")
+      type    = r.type
+      ttl     = try(r.ttl, null)
       records = try(r.records, null)
       alias = {
         name                   = try(r.alias.name, null)
@@ -35,7 +35,7 @@ locals {
 
 resource "aws_route53_zone" "default" {
   count = local.enabled ? 1 : 0
-  
+
   name          = var.zone_name
   comment       = module.this.name
   force_destroy = var.force_destroy
@@ -53,7 +53,7 @@ resource "aws_route53_record" "default" {
   health_check_id = try(each.value.health_check_id, null)
   set_identifier  = try(each.value.set_identifier, null)
 
-  # If TTL didn't set and the record type is not an alias - use default TTL
+  # If the TTL wasn't set and the record type is not an alias, then use the default TTL
   ttl = each.value.alias.name == null ? coalesce(each.value.ttl, var.default_ttl) : null
 
   # Split TXT records which have a size of more than 255 chars
@@ -76,7 +76,7 @@ resource "aws_route53_record" "default" {
     for_each = coalesce(
       each.value.geolocation.continent,
       each.value.geolocation.country,
-      each.value.geolocation.subdivision, "empty") == "empty" ? [] : [each.value.geolocation]
+    each.value.geolocation.subdivision, "empty") == "empty" ? [] : [each.value.geolocation]
 
     content {
       continent   = geolocation_routing_policy.value.continent

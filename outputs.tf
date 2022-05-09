@@ -15,5 +15,5 @@ output "record" {
 
 output "name_servers" {
   description = "A list of name servers in associated (or default) delegation set"
-  value = local.enabled ? aws_route53_zone.default[0].name_servers : null
+  value       = local.enabled ? aws_route53_zone.default[0].name_servers : null
 }

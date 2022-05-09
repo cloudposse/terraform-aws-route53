@@ -28,7 +28,7 @@
 
 -->
 
-Route53 module that creates zones and records with various routing policies.
+This terraform module helps manage Route53 zones and associated resource records with various routing policies.
 
 ---
 
@@ -103,7 +103,7 @@ For automated tests of the complete example using [bats](https://github.com/bats
 (which tests and deploys the example on AWS), see [test](test).
 
 ```hcl
-module "zone_route53" {
+module "zone" {
   source           = "cloudposse/terraform-route53/aws"
   # Cloud Posse recommends pinning every module to a specific version
   # version = "x.x.x"
