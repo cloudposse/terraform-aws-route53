@@ -45,7 +45,7 @@ func TestExamplesComplete(t *testing.T) {
   // This will run `terraform init` and `terraform apply` and fail the test if there are any errors
   terraform.InitAndApply(t, terraformOptions)
 
-  zone_name := "cloudposse-terraform-aws-route53.cloudposse.com"
+  zone_name := "eg-terraform-aws-route53.cloudposse.com"
   // Run `terraform output` to get the value of an output variable
   zone_name_output := terraform.Output(t, terraformOptions, "zone_name")
 

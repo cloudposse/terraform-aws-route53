@@ -60,7 +60,7 @@ usage: |-
 
   ```hcl
   module "zone" {
-    source           = "cloudposse/terraform-route53/aws"
+    source = "cloudposse/terraform-route53/aws"
     # Cloud Posse recommends pinning every module to a specific version
     # version = "x.x.x"
 
@@ -87,11 +87,11 @@ usage: |-
 # Example usage
 examples: |-
   Here is an example of using this module:
-  - [`examples/complete`](https://github.com/cloudposse/terraform-aws-route53/) - complete example of using this module
+  - [`examples/complete`](https://github.com/cloudposse/terraform-aws-route53/examples/complete) - complete example of using this module
 
 # How to get started quickly
 quickstart: |-
-  Here's how to get started...
+  Just use example provided above or see complete example. 
 
 # Other files to include in this README from the project folder
 include:

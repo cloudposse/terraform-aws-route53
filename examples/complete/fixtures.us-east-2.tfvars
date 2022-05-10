@@ -6,7 +6,7 @@ environment = "ue2"
 
 stage = "test"
 
-zone_name = "cloudposse-terraform-aws-route53.cloudposse.com"
+zone_name = "eg-terraform-aws-route53.cloudposse.com"
 
 records = [
   {
