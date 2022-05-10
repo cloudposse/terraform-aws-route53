@@ -104,7 +104,7 @@ For automated tests of the complete example using [bats](https://github.com/bats
 
 ```hcl
 module "zone" {
-  source           = "cloudposse/terraform-route53/aws"
+  source = "cloudposse/terraform-route53/aws"
   # Cloud Posse recommends pinning every module to a specific version
   # version = "x.x.x"
 
@@ -130,13 +130,13 @@ module "zone" {
 
 ## Quick Start
 
-Here's how to get started...
+Just use example provided above or see complete example. 
 
 
 ## Examples
 
 Here is an example of using this module:
-- [`examples/complete`](https://github.com/cloudposse/terraform-aws-route53/) - complete example of using this module
+- [`examples/complete`](https://github.com/cloudposse/terraform-aws-route53/examples/complete) - complete example of using this module
 
 
 

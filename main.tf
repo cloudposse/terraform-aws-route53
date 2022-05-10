@@ -59,7 +59,7 @@ resource "aws_route53_record" "default" {
   # Split TXT records which have a size of more than 255 chars
   records = each.value.records != null ? [for r in each.value.records :
     each.value.type == "TXT" && length(regexall("(\\\"\\\")", r)) == 0 ?
-    replace(replace(r, "\n",""), "/(.{255})/", "$1\"\"") : r
+    replace(replace(r, "\n", ""), "/(.{255})/", "$1\"\"") : r
   ] : null
 
   dynamic "alias" {
